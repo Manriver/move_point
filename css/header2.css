@@ -1,0 +1,172 @@
+/*   inicio de base */
+h1, h2, h3, h4, h5, h6, header, html, i, iframe, img, ins, kbd, label, legend,  mark, menu, nav, object, ol, p, pre, q, samp, section, small, span, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr,var, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: 0 0;
+}
+
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+*, *::after, *::before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+a, body, p, span {
+    font-weight: 400;
+    font-family: 'Open Sans',sans-serif;
+}
+
+a {
+    vertical-align: baseline;
+    background: 0 0;
+    background-color: rgba(0, 0, 0, 0);
+    color: inherit;
+    text-decoration: none;
+}
+
+a, body, p, span {
+    font-weight: 400;
+    font-family: 'Open Sans',sans-serif;
+}
+
+.sr-only, a, hr {
+    padding: 0;
+}
+a, button, input, select, textarea {
+    margin: 0;
+}
+
+embed, img, object {
+    max-width: 100%;
+}
+/*FIN DE BASE*/ 
+
+#Header {
+	background-color: #fff;
+	-webkit-box-shadow: 0 1px 2px #ddd;
+	box-shadow: 0 1px 2px #ddd;
+	padding: 7px 0;
+	height: 63px;
+	z-index: 3;
+	color: #2c3031;
+}
+
+#Header, body.menu-open > main::after {
+	position: absolute;
+	width: 100%;
+	left: 0;
+	top: 0;
+}
+
+#Header .header-element {
+	padding: 0 11px;
+	display: table;
+	width: 100%;
+}
+
+#Header .header-menu {
+	float: left;
+	z-index: 10;
+}
+
+#Header .header-menu > .menu-controls {
+	position: relative;
+	z-index: 3;
+}
+
+#Header .header-menu > .menu-controls button {
+	width: 49px;
+	height: 49px;
+	background-color: transparent;
+	border: 1px solid #efefef;
+	font-size: 20px;
+}
+
+#Header .header-menu > .menu-controls button {
+	width: 49px;
+	height: 49px;
+	background-color: transparent;
+	border: 1px solid #efefef;
+	font-size: 20px;
+}
+
+#Header .header-menu > .menu-access {
+	height: 100%;
+	position: absolute;
+	right: 7px;
+	left: auto;
+	top: 7px;
+	z-index: 10;
+}
+
+#Header .header-menu > .menu-access.version-main button {
+	border-bottom: 7px solid #ff149b;
+}
+
+.fa {
+	display: inline-block;
+	font: normal normal normal 14px/1 FontAwesome;
+	font-size: inherit;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+#Header .header-element > .header-logo {
+	padding: 0 0 0 7px;
+	float: left;
+	position: relative;
+	z-index: 10;
+}
+
+#Header .header-element > .header-logo a {
+	color: inherit;
+}
+
+#Header .header-element > .header-logo strong {
+	display: block;
+	font-weight: 600;
+	font-size: 20px;
+	margin-right: 7px;
+}
+
+#Header .header-element > .header-logo span {
+	display: block;
+	font-weight: 400;
+	font-size: 16px;
+	color: #666;
+	line-height: 100%;
+}
+
+#Header .header-element > .header-options {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	left: 0;
+	top: 0;
+	text-align: center;
+	padding-top: 7px;
+}
+
+#Header .header-element > .header-cdmx {
+	padding-right: 56px;
+	float: right;
+	height: 49px;
+}
+
+#complementoBarraSuperior{ 
+	top:	63px;
+	z-index:	10;
+	height:		6px;
+	width:		100%;
+	position: fixed;
+	
+	background: #87888a;
+}

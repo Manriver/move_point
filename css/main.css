@@ -1,0 +1,254 @@
+html,body{
+    width: 100%;
+    height: 100%;
+    padding: 0px;
+    margin: 0px;
+
+}
+
+#loading {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: url('images/465.gif') 50% 50% no-repeat rgb(249,249,249);
+    opacity: .8;
+}
+
+#loading2 {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: url('images/380.gif') 50% 50% no-repeat rgb(249,249,249);
+    opacity: .8;
+}
+
+.mainMap{
+    width: 100%;
+    height: 100%;
+    padding: 0px;
+    margin: 0px;
+
+}
+#map{
+    width: 100%;
+    height: 100%;
+
+    padding: 0px;
+    margin: 0px;
+}
+
+.dgiFilter{
+	position: absolute;
+    padding: 8px;
+    margin-top: 10px;
+	margin-left: 55px;
+    width: 220px;
+    height: auto;
+
+    background: #fff  !important;
+    border-radius: 4px  !important;
+    border: 1px solid #999999  !important;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 0 4px 2px  !important;
+    z-index: 7;
+
+}
+
+/*.dgiFilter div input,select,p{
+    margin:0px 5px 0px 5px;
+    width: 200px !important;
+    min-width: 200px !important;
+    max-width: 200px !important;
+
+    font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+    font-size: 8pt;
+    font-style: normal;
+
+    z-index:7;
+}*/
+
+.dgiFilter div input,p{
+    margin:0px 5px 0px 5px;
+    width: 200px !important;
+    min-width: 200px !important;
+    max-width: 200px !important;
+
+    font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+    font-size: 8pt;
+    font-style: normal;
+
+    z-index:7;
+}
+
+.dgiFilter button{
+    float: right;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    margin-right: 5px;
+    background: #fff;
+    border-radius: 4px;
+    border: 1px solid #999999;
+}
+
+
+input{
+    /*border: 1px solid #e90eb0  !important;*/
+}
+
+hr{
+margin-top: 2px;
+margin-bottom: 2px;
+border: 0;
+    border-top-width: 0px;
+    border-top-style: none;
+    border-top-color: currentcolor;
+border-top: 1px solid #eee;
+}
+
+#listderrumbes{
+    height: 250px;
+    overflow: auto;
+}
+
+#cerrar{
+	padding: 0px;
+   	margin-top: 0px;
+}
+
+#mopciones{
+    position: absolute;
+    right: 10px;
+    top: 80px;
+    display: block;
+    z-index: 2;
+}
+
+.yellow{
+	background-color: #FFCC00;
+	color:#FFF;
+}
+
+.header_customize {
+    background-color: #1d1d1b;
+    color: #efefef;
+    text-align: center;
+    border: none;
+    border-radius: 4px 4px 0 0;
+    font-size:18px;http://localhost/logos/#extra
+}
+.header_customize2 {
+	padding: 10.5px 7px;
+	color: #fff;
+	background-color: #f3d148;
+	text-align: center;
+	font-weight: 600;
+	text-transform: uppercase;
+	text-shadow: 1px 1px 1px gray;
+}
+.footer_customize {
+    text-align: center;
+    background-color: #1d1d1b;
+    color: #efefef;
+    padding: 10.5px 14px;
+    border-radius: 0 0 4px 4px;
+}
+
+.modal-footer #btn_cerrar .btn {
+	background-color: transparent;
+	border-color: #efefef;
+	color: #efefef;
+}
+
+.modal-footer #btn_cerrar .btn:hover {
+	color: #999;
+	border-color: #999;
+}
+
+.modal-footer #btn_accion .btn {
+	background-color: transparent;
+	border-color: #efefef;
+	color: #efefef;
+}
+
+.modal-footer #btn_accion .btn:hover {
+	color: #999;
+	border-color: #999;
+}
+
+#options .filtering {
+	width: 250px;
+	display: block;
+	-webkit-box-shadow: 1px 1px 3px #2c3031;
+	box-shadow: 1px 1px 3px #2c3031;
+	border-radius: 7px;
+	background-color: #efefef;
+	padding: 7px;
+	/*top: 80px;*/
+	top: 90px;
+	position: absolute;
+	/*left: 10px;*/
+	left: 25px;
+	z-index: 10;
+}
+
+#opciones{
+    position: absolute;
+    left: 13px;
+    top: 83px;
+    z-index: 9;
+}
+
+.Logos-box {
+	text-align: center;
+}
+
+#Level-2 {
+	background-color: #444;
+	/*height:270px;*/
+	padding: 84px 0 70px;
+	color: #fff;
+}
+
+.btn-pink {
+	font-size: 12px;
+	padding: 9.1px 14px;
+	background-color: #FF149B;
+	border-color: #CC107C;
+	color: #FFF;
+}
+
+.btn-pink:hover {
+	color: #fff;
+	background-color: #CC107C;
+}
+
+.#opciones label:nth-child(1 .active){
+	background-color: #FFF !important;
+	color:#F11810 !important;
+}
+
+@media (max-width: 768px) {
+    #mopciones{
+        position: absolute;
+        right: 10px;
+        top: 50px;
+        display: block;
+        z-index: 2;
+    }
+
+}
+
+@media (min-width: 767px) {
+    #mopciones{
+        position: absolute;
+        right: 10px;
+        top: 80px;
+        display: block;
+        z-index: 2;
+    }
+}

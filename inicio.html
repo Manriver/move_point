@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sismos Capas</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" /> <!-- movil -->
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>  <!-- caracteres -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- compativilidad -->
+    <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- dispositivos -->
+    <link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v3/3.15/themes/css/cartodb.css" />
+    <script src="http://libs.cartocdn.com/cartodb.js/v3/3.15/cartodb.js"></script>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/0.4.3/leaflet.draw.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/0.4.3/leaflet.draw.js"></script>
+    
+    <link type="text/css" rel="stylesheet" href="css/style.css">
+    <link type="text/css" rel="stylesheet" href="css/main2.css">
+    
+    <!-- <link rel="stylesheet" href="Leaflet.ExtraMarkers/dist/css/leaflet.extra-markers.min.css">
+    <script src="Leaflet.ExtraMarkers/dist/js/leaflet.extra-markers.min.js"></script> -->
+    
+    <script src="main.js" type="text/javascript"></script>
+    
+    <link href="js/s2/select2.min.css" rel="stylesheet" />
+    <script src="js/s2/select2.min.js"></script>
+    <script type="text/javascript">
+        $('select').select2();
+    </script>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <div class="full-width full-width-extra">
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-2 columna">
+                <span class="cabezera_">
+                    <a href="https://sig.cdmx.gob.mx">
+                    </a>
+                </span>
+                <a href="#" id="ctrl_layerpanel" class="on" title="<lang>Panel de capas</lang>"></a>
+            </div>
+            <div class="col-lg-1 col-md-1 col-sm-1 columna">
+                    <span class="cabezera_">
+                        <a href="https://sig.cdmx.gob.mx">
+                            <img id="logo" src="css/images/MX_logo_GISCDMX_Smon-cab.svg" alt="Tu CDMX">
+                        </a>
+                    </span>
+            </div>
+    </div>
+    <br>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 columna">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Filtros</h3>
+                    </div>
+                    <div class="panel-body">
+                        <form class="form-inline">
+                            <div class="row">
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 columna">
+                                    <div class="form-group">
+                                        <p class="form-control-static">Delegación a elegir:</p>
+                                        <select class="js-example-basic-single form-control" name="selectDel" id="selectDel" >
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 columna">
+                                    <div class="form-group">
+                                        <p class="form-control-static">Colonia a elegir:</p>
+                                        <select class="js-example-basic-single2 form-control" name="selectCol" id="selectCol">
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 columna" >
+                                    <div class="form-group">
+                                            <div id="callefilter" style="display: none;">
+                                            <p class="form-control-static">Calle a elegir:</p>
+                                            <select class="js-example-basic-single3 form-control" name="selectCal" id="selectCal">
+                                            </select>
+                                            </div>
+                                        <!-- <input type="button" name="Buscar" value="Buscar" class="btn btn-info" id="dgiFilterSearch"> -->
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 columna">
+                                    <div class="form-group">
+                                        <p class="form-control-static">&nbsp; &nbsp;</p>
+                                        <input type="button" name="Buscar" value="Buscar" class="btn btn-info" id="dgiFilterSearch">
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            <div id="map" style="height: 700px;"></div>
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="copyright">
+                        SIG-CDMX @ 2017 Gobierno de CDMX
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

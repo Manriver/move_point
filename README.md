@@ -1,2 +1,2 @@
-# move_point
-Editar la posicion de los puntos de manera grafica con leaflets y carto
+# read_write_mapcarto
+Mostrar los puntos de un dataset en un mapa con leaflets

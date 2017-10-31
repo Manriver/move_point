@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+	<link rel="shortcut icon" href="http://cartodb.com/assets/favicon.ico" />
+	<link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v3/3.15/themes/css/cartodb.css" />
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+	<link href="css/bootstrap/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/animate/animate.css"/>
+	<link rel="stylesheet" type="text/css" href="./css/header2.css">
+	<link rel="stylesheet" type="text/css" href="./css/main.css">
+</head>
+<body>
+	<header id="Header">
+        <div class="header-element">
+            <div class="header-menu">
+                <div class="menu-controls">
+                    <button type="button" class="btn btn-default" >			
+                        <i class="fa fa-navicon"></i>
+                    </button>
+                </div>
+                <!-- <div class="menu-access version-main">
+                    <button type="button" class="btn btn-default" id="Show-menu">
+                        <i class="fa fa-gears"></i>
+                    </button>
+                </div>-->
+            </div>
+            <div class="header-logo">
+                <a href="/">
+                    <strong>Plataforma CDMX</strong>
+					<span>Reconstrucción</span>                </a>
+            </div>
+            <div id="Lights_Inicio" class="header-options">
+                <div class="inner" style="">
+                    <div class="labelInit">
+                        <strong> ACTUALIZACIÓN GEOGRÁFICA </strong> 
+                    </div>
+
+                    <div class="labelCity"></div>
+                </div>
+            </div>
+            
+            <div class="header-cdmx">
+                <img src="images/Logo-cdmx.png" alt="CDMX" width="120">
+            </div>
+        </div>
+    </header>
+    
+    
+    
+    <div style="height: 69px;"  ></div>
+    <div id="complementoBarraSuperior"></div>
+    
+	<div id="modal" class="modal fade" role="dialog">
+		<div id="size" class="modal-dialog">
+			<div class="modal-content">
+				<div id="modal_header" class="modal-header">
+					<button type="button" class="close btn-success" data-dismiss="modal">
+						&times;
+					</button>
+					<h4 id="modal-title" class="modal-title"></h4>
+				</div>
+				<div class="modal-body">
+					<div id="modal_body_title" ></div>
+					<div id="modal_content">
+					</div>
+				</div>
+				<br /><div id="alert"></div>
+				<div id="modal_footer" class="modal-footer">
+					<div id="btn_cerrar" style="display: inline-block">
+						<button id="modal_cerrar" type="button" class="btn btn-default" data-dismiss="modal">
+							Cerrar
+						</button>
+					</div>
+					<div id="btn_accion" style="display: inline-block">
+						<button data-accion="accion" type="button" class="btn">
+							Accion
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<section id="login">
+			<br /><br /><br />
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">Login</div>
+
+                            <div class="panel-body">
+                                <!-- <form class="form-horizontal" method="POST" action="https://www.plataforma.cdmx.gob.mx/login"> -->
+                                <form class="form-horizontal" id="form_login" name="form_login">
+                                    <!-- <input name="_token" value="JIWMNt8VGIh7h2lb1lSeZmmY07Smi5MPcmuswp26" type="hidden"> -->
+
+                                    <div class="form-group">
+                                        <label for="username" class="col-md-4 control-label">Usuario</label>
+                                        <div class="col-md-6">
+                                            <input type="text" id="username" class="form-control" name="username" >
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="password" class="col-md-4 control-label">Contraseña</label>
+                                        <div class="col-md-6">
+                                            <input id="password" class="form-control" name="password" required="" type="password">
+										</div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="col-md-8 col-md-offset-4">
+                                            <div class="access">
+                                                <!-- <button type="submit" class="btn btn-primary not-focusable">
+                                                    Iniciar Sesión
+                                                </button> -->
+                                                
+												<button id="acceder" name="acceder" class="btn btn-pink">
+                                                    Iniciar Sesión
+                                                </button>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br /><br /><br />
+        </section>
+        
+	<section id="Level-2">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <span style="font-size: 24px !important;">Plataforma para actualizar ubicaci&oacuten de puntos de riesgo.</span>
+                </div>
+                <div class="col-md-12">
+                    <span style="font-size: 14px !important;"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+	
+	<br /><br /><br />
+	<section id="Level-3">
+		
+        <div class="container">
+            <div class="Logos-box">
+                <div class="item col-lg-12"><img src="images/Logo-cdmx.png" alt="Gobierno de la Ciudad de México" width="150"></div>
+            </div>
+        </div>
+    </section>
+        
+    
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	
+	
+	
+	<!--<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.js"></script>
+	<script type="text/javascript" src="js/bootstrap/bootstrap.min.js"></script>-->
+	<script type="text/javascript" src="js/notify/bootstrap-notify.min.js"></script>
+	<script type="text/javascript" src="js/funciones.js"></script>
+	
+	<script type="text/javascript" src="scripts/login.js"></script>
+</body>
+</html>
