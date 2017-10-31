@@ -1,47 +1,5 @@
 validaSesion();
 
-function validaSesion(){
-	
-	var consultaSesion = 'controllers/lock.php';
-    petichon = $.ajax({         
-                    url:consultaSesion,
-                    dataType:'json',
-                    type:'POST',
-                    async: false
-                });                 
-                            
-	petichon.done(function(obj){
-        // console.log(obj);
-		if(obj.sesion == 0){
-		  $(location).attr('href','index.html');		
-		}
-	});			//FIN DE PETICHON
-}
-
-function fn_oracle_update(lfeature_properties){
-
-    var param = {
-        "datos" : lfeature_properties
-    };
-    // console.log("Entre function");
-    
-    var updateoracle = 'controllers/oracleupdate.php';
-      
-    $.ajax({         
-        type: "POST",
-        url: updateoracle,
-        dataType: "json",
-        success: function (response) {
-            if (response) {
-                alert(response);
-            } else {
-                alert("No se encuentran datos!");
-            }
-        },
-        data: param
-    });
-}
-
 var cartolayer, sltfeature, drawnItems, lyrs, mkrInicial, lyrRadio, maps, objlayerBase, highlight, dehighlight, select, layerbase, paramlayerbase, parammapbase, viz, vizparam, el, layers, user, api_key, clickCircle5, clickCircle8;
 var geomTools;
 var drawControl;

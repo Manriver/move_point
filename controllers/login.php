@@ -20,7 +20,7 @@ $info3['codigo'] = 3;
 $info4['error'] = 'Acceso Correcto';
 $info4['codigo'] = 0;
 //$info4['url'] = ACCESO_PRINCIPAL;
-$info4['url'] = 'inicio.php';
+$info4['url'] = 'inicio.html';
 
 if(trim($_POST['username']) == ""){
 	echo json_encode($info1);
