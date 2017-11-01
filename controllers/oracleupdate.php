@@ -27,7 +27,7 @@ if (!$conexion) {
     trigger_error(htmlentities(strtoupper($e['message'])." --> ERROR EN LA CONEXION", ENT_QUOTES), E_USER_ERROR);
 }
 
-$file = fopen("consultas.txt", "w");
+$file = fopen("consultas.txt", "a");
 
 //------------------------------------------------------- UPDATE
 // Preparar la sentencia
@@ -116,10 +116,10 @@ oci_free_statement($qry_ist);
 oci_free_statement($qry_updt);
 oci_close($conexion);
 
-fwrite($file, "Resultado de Consulta ".$resultado["mensaje_insert"]. PHP_EOL);
-fwrite($file, "Resultado de Consulta ".$resultado["codigo_insert"]. PHP_EOL);
-fwrite($file, "Resultado de Consulta ".$resultado["mensaje_update"]. PHP_EOL);
-fwrite($file, "Resultado de Consulta ".$resultado["codigo_update"]. PHP_EOL);
+fwrite($file, "Resultado de Consulta Mensaje Insercion ".$resultado["mensaje_insert"]. PHP_EOL);
+fwrite($file, "Resultado de Consulta Codigo Insercion".$resultado["codigo_insert"]. PHP_EOL);
+fwrite($file, "Resultado de Consulta Mensaje Actualizacion".$resultado["mensaje_update"]. PHP_EOL);
+fwrite($file, "Resultado de Consulta Codigo Actualizacion".$resultado["codigo_update"]. PHP_EOL);
 fclose($file);
 echo json_encode($resultado);
 

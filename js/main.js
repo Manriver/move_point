@@ -140,41 +140,13 @@ $(function(){
                 layers.eachLayer(function (layer) {
                     // if (layer instanceof L.Marker){//circleMarker
                     // if (layer instanceof L.circleMarker){//circleMarker
-
                     if (layer != null){//circleMarker
 
-                        // console.log(layer.feature.properties.lng);
-                        // console.log(layer._latlng.lng)
-                        
-                        // console.log(layer.feature.properties.lng);
-                        // console.log(layer._latlng.lng)
                         var arreglo = [];
                         arreglo.push(layer.feature.properties);
-                        // var lfp = layer.feature.properties;
-                        // console.log(lfp);
-                        // var l_latlng = layer._latlng
-                        // console.log(l_latlng);
                         arreglo.push(layer._latlng);
-                        // var unitarray = lfp.concat(l_latlng);
                         var layer_properties_stri = JSON.stringify(arreglo);
-
-                        /* Pasar todo lo del objeto a JSONstringify
-                            var seen = [];
-
-                            var layer_properties_stri = JSON.stringify(layer, function(key, val) {
-                               if (val != null && typeof val == "object") {
-                                    if (seen.indexOf(val) >= 0) {
-                                        return;
-                                    }
-                                    seen.push(val);
-                                }
-                                return val;
-                            });
-
-                            // var layer_properties_stri = JSON.stringify(layer);
-                        */
-
-                        console.log(layer_properties_stri);
+                        // console.log(layer_properties_stri);
                         fn_oracle_update(layer_properties_stri);
 
                         var sql = new cartodb.SQL({ user : 'finanzasdf-admin' });
@@ -243,7 +215,17 @@ $(function(){
                 sltfeature.bringToBack();
             });
         }
-        
+
+        $("button#dgiFilterSearch.btn").on("click",function(evt){
+            console.log(this);
+            var $this = $(this);
+            $this.button('loading');
+            getSearch();
+            layerleatflets();
+            $this.button('reset');
+
+        });//fin  on click
+
         function getSearch(){
             var optiondelegacion = $("#selectDel").val();
             var optioncolonia = $("#selectCol").val();
@@ -262,11 +244,6 @@ $(function(){
                     bounry({user: "finanzasdf-admin"}, "delegaciones_df", "cartodb_id = "+optiondelegacion, "", map)
             }
         }
-
-        $("#dgiFilterSearch").on("click",function(evt){
-            getSearch();
-            layerleatflets();
-        });//fin  on click
 
         function layerleatflets(){
 
