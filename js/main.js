@@ -307,9 +307,7 @@ $(function(){
                                            , borderWidth: 5
                                            , borderColor: '#12BF38'
                                     };
-                                    return L.marker(latlng, { icon: L.BeautifyIcon.icon(options), draggable: true }).addTo(map);
-                                    // return L.marker(latlng, { icon: L.BeautifyIcon.icon(), draggable: true }).addTo(map);
-    				                // semaforopoint = "#12BF38";                                
+                                    return L.marker(latlng, { icon: L.BeautifyIcon.icon(options), draggable: false }).addTo(map);
     				                break;
     				            case 1:
                                     options = {
@@ -317,14 +315,7 @@ $(function(){
                                            , borderWidth: 5
                                            , borderColor: '#DE2220'
                                     };
-                                    return L.marker(latlng, { icon: L.BeautifyIcon.icon(options), draggable: true }).addTo(map);
-                                    // var options = {
-                                    //     icon: 'bus'
-                                    //         , borderColor: '#b3334f'
-                                    //         , textColor: '#b3334f'
-                                    // };
-                                    // return L.marker(latlng, { icon: L.BeautifyIcon.icon(options), draggable: true }).addTo(map);
-                                    // semaforopoint = "#DE2220";
+                                    return L.marker(latlng, { icon: L.BeautifyIcon.icon(options), draggable: false }).addTo(map);
     				                break;
     				            case 2:
                                     options = {
@@ -332,16 +323,7 @@ $(function(){
                                            , borderWidth: 5
                                            , borderColor: '#F9FF00'
                                     };
-                                    return L.marker(latlng, { icon: L.BeautifyIcon.icon(options), draggable: true }).addTo(map);
-                                    //  var options = {
-                                    //  icon: 'taxi'
-                                    //  , borderColor: 'red'
-                                    //  , textColor: 'Red'
-                                    //  , backgroundColor: '#FFF607'
-                                    //  , innerIconStyle: 'font-size:9px;padding-top:1px;'
-                                    //  };
-                                    //  return L.marker(latlng, { icon: L.BeautifyIcon.icon(options), draggable: true }).addTo(map);
-    				                // semaforopoint = "#F9FF00";
+                                    return L.marker(latlng, { icon: L.BeautifyIcon.icon(options), draggable: false }).addTo(map);
     				                break;
     				            case 3:
                                     options = {
@@ -349,16 +331,7 @@ $(function(){
                                            , borderWidth: 5
                                            , borderColor: '#7F7F7F'
                                     };
-                                    return L.marker(latlng, { icon: L.BeautifyIcon.icon(options), draggable: true }).addTo(map);
-                                    //  options = {
-                                    //  icon: 'spinner'
-                                    //  , spin: 'true'
-                                    //  , borderColor: '#8A90B4'
-                                    //  , textColor: 'white'
-                                    //  , backgroundColor: '#8A90B4'
-                                    //  };
-                                    //  return L.marker(latlng, { icon: L.BeautifyIcon.icon(options), draggable: true }).addTo(map);
-    				                // semaforopoint = "#7F7F7F";
+                                    return L.marker(latlng, { icon: L.BeautifyIcon.icon(options), draggable: false }).addTo(map);
     				                break;
     				            case 4:
                                     options = {
@@ -366,15 +339,7 @@ $(function(){
                                            , borderWidth: 5
                                            , borderColor: '#E41ACE'
                                     };
-                                    return L.marker(latlng, { icon: L.BeautifyIcon.icon(options), draggable: true }).addTo(map);
-                                    // options = {
-                                    //     isAlphaNumericIcon: true
-                                    //         , borderColor: '#00ABDC'
-                                    //         , textColor: '#00ABDC'
-                                    //         , innerIconStyle: 'margin-top:0;'
-                                    // };
-                                    // return L.marker(latlng, { icon: L.BeautifyIcon.icon(options), draggable: true }).addTo(map);
-                                    // semaforopoint = "#E41ACE";
+                                    return L.marker(latlng, { icon: L.BeautifyIcon.icon(options), draggable: false }).addTo(map);
     				                break;
     				            case 'NULL':
                                     options = {
@@ -382,19 +347,8 @@ $(function(){
                                            , borderWidth: 5
                                            , borderColor: '#F2F2F2'
                                     };
-                                    return L.marker(latlng, { icon: L.BeautifyIcon.icon(options), draggable: true }).addTo(map);
-    				                // semaforopoint = "#F2F2F2";
-    				        } 
-    					/*
-                        	var geojsonMarkerOptions = {
-    						    radius: 5,
-    						    fillColor: semaforopoint,
-    						    color: "#000",
-    						    weight: 1,
-    						    opacity: 1,
-    						    fillOpacity: 0.8
-    						};
-                        */
+                                    return L.marker(latlng, { icon: L.BeautifyIcon.icon(options), draggable: false }).addTo(map);
+    				        }
                         // L.marker(latlng, { icon: L.BeautifyIcon.icon(), draggable: true }).addTo(map).bindPopup("I'm Beautify");
                         // return L.circleMarker(latlng, geojsonMarkerOptions);
 					    // return L.marker(latlng, geojsonMarkerOptions);
