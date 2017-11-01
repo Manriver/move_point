@@ -181,11 +181,11 @@ $(function(){
 
                         var strsql ="UPDATE "+'"finanzasdf-admin"'+".sismo_capas_edit_seduvi SET the_geom = ST_SetSRID(st_makepoint("+layer._latlng.lng+", "+layer._latlng.lat+"),4326) WHERE cartodb_id = "+layer.cartodb_id;
                         console.log(strsql);
-                        // $.getJSON("https://finanzasdf-admin.carto.com/api/v2/sql?q="+strsql+"&api_key=9636b95f3e6c01a780c65a869e491303ed330f9c", function(data){
-                        //      $.each(data.rows, function(key, val) {
-                        //          alert("llave "+key+" "+val);
-                        //      });
-                        //});//end getJSON
+                        $.getJSON("https://finanzasdf-admin.carto.com/api/v2/sql?q="+strsql+"&api_key=9636b95f3e6c01a780c65a869e491303ed330f9c", function(data){
+                             $.each(data.rows, function(key, val) {
+                                 alert("llave "+key+" "+val);
+                             });
+                        });//end getJSON
                         
                     }//End if
                 });//end eachlayer
@@ -299,55 +299,91 @@ $(function(){
 				geojsonLayer = L.geoJson(data, {
 					pointToLayer: function(feature, latlng) {
 						// console.log(feature.properties.clas_global);
-    				        
+                        var options;
                             switch(feature.properties.clas_global) {
     				            case 0:
-                                    return L.marker(latlng, { icon: L.BeautifyIcon.icon(), draggable: true }).addTo(map);
-    				                semaforopoint = "#12BF38";                                
+                                    options = {
+                                        iconShape: 'doughnut'
+                                           , borderWidth: 5
+                                           , borderColor: '#12BF38'
+                                    };
+                                    return L.marker(latlng, { icon: L.BeautifyIcon.icon(options), draggable: true }).addTo(map);
+                                    // return L.marker(latlng, { icon: L.BeautifyIcon.icon(), draggable: true }).addTo(map);
+    				                // semaforopoint = "#12BF38";                                
     				                break;
     				            case 1:
-                                    var options = {
-                                        icon: 'bus'
-                                            , borderColor: '#b3334f'
-                                            , textColor: '#b3334f'
+                                    options = {
+                                        iconShape: 'doughnut'
+                                           , borderWidth: 5
+                                           , borderColor: '#DE2220'
                                     };
                                     return L.marker(latlng, { icon: L.BeautifyIcon.icon(options), draggable: true }).addTo(map);
-                                    semaforopoint = "#DE2220";
+                                    // var options = {
+                                    //     icon: 'bus'
+                                    //         , borderColor: '#b3334f'
+                                    //         , textColor: '#b3334f'
+                                    // };
+                                    // return L.marker(latlng, { icon: L.BeautifyIcon.icon(options), draggable: true }).addTo(map);
+                                    // semaforopoint = "#DE2220";
     				                break;
     				            case 2:
-                                    var options = {
-                                        icon: 'taxi'
-                                            , borderColor: 'red'
-                                            , textColor: 'Red'
-                                            , backgroundColor: '#FFF607'
-                                            , innerIconStyle: 'font-size:9px;padding-top:1px;'
+                                    options = {
+                                        iconShape: 'doughnut'
+                                           , borderWidth: 5
+                                           , borderColor: '#F9FF00'
                                     };
                                     return L.marker(latlng, { icon: L.BeautifyIcon.icon(options), draggable: true }).addTo(map);
-    				                semaforopoint = "#F9FF00";
+                                    //  var options = {
+                                    //  icon: 'taxi'
+                                    //  , borderColor: 'red'
+                                    //  , textColor: 'Red'
+                                    //  , backgroundColor: '#FFF607'
+                                    //  , innerIconStyle: 'font-size:9px;padding-top:1px;'
+                                    //  };
+                                    //  return L.marker(latlng, { icon: L.BeautifyIcon.icon(options), draggable: true }).addTo(map);
+    				                // semaforopoint = "#F9FF00";
     				                break;
     				            case 3:
                                     options = {
-                                        icon: 'spinner'
-                                            , spin: 'true'
-                                            , borderColor: '#8A90B4'
-                                            , textColor: 'white'
-                                            , backgroundColor: '#8A90B4'
+                                        iconShape: 'doughnut'
+                                           , borderWidth: 5
+                                           , borderColor: '#7F7F7F'
                                     };
                                     return L.marker(latlng, { icon: L.BeautifyIcon.icon(options), draggable: true }).addTo(map);
-    				                semaforopoint = "#7F7F7F";
+                                    //  options = {
+                                    //  icon: 'spinner'
+                                    //  , spin: 'true'
+                                    //  , borderColor: '#8A90B4'
+                                    //  , textColor: 'white'
+                                    //  , backgroundColor: '#8A90B4'
+                                    //  };
+                                    //  return L.marker(latlng, { icon: L.BeautifyIcon.icon(options), draggable: true }).addTo(map);
+    				                // semaforopoint = "#7F7F7F";
     				                break;
     				            case 4:
                                     options = {
-                                        isAlphaNumericIcon: true
-                                            , borderColor: '#00ABDC'
-                                            , textColor: '#00ABDC'
-                                            , innerIconStyle: 'margin-top:0;'
+                                        iconShape: 'doughnut'
+                                           , borderWidth: 5
+                                           , borderColor: '#E41ACE'
                                     };
                                     return L.marker(latlng, { icon: L.BeautifyIcon.icon(options), draggable: true }).addTo(map);
-    				                semaforopoint = "#E41ACE";
+                                    // options = {
+                                    //     isAlphaNumericIcon: true
+                                    //         , borderColor: '#00ABDC'
+                                    //         , textColor: '#00ABDC'
+                                    //         , innerIconStyle: 'margin-top:0;'
+                                    // };
+                                    // return L.marker(latlng, { icon: L.BeautifyIcon.icon(options), draggable: true }).addTo(map);
+                                    // semaforopoint = "#E41ACE";
     				                break;
     				            case 'NULL':
-    				                semaforopoint = "#F2F2F2";
+                                    options = {
+                                        iconShape: 'doughnut'
+                                           , borderWidth: 5
+                                           , borderColor: '#F2F2F2'
+                                    };
+                                    return L.marker(latlng, { icon: L.BeautifyIcon.icon(options), draggable: true }).addTo(map);
+    				                // semaforopoint = "#F2F2F2";
     				        } 
     					/*
                         	var geojsonMarkerOptions = {
@@ -360,34 +396,32 @@ $(function(){
     						};
                         */
                         // L.marker(latlng, { icon: L.BeautifyIcon.icon(), draggable: true }).addTo(map).bindPopup("I'm Beautify");
-						
                         // return L.circleMarker(latlng, geojsonMarkerOptions);
 					    // return L.marker(latlng, geojsonMarkerOptions);
 					},
 					onEachFeature: function (feature, layer) {
 					    if (feature.geometry.type === 'Point') {
-
-					        switch(feature.properties.clas_global) {
-					            case 0:
-					                semaforo = "Verde";
-					                break;
-					            case 1:
-					                semaforo = "Rojo";
-					                break;
-					            case 2:
-					                semaforo = "Amarillo";
-					                break;
-					            case 3:
-					                semaforo = "Sin captura";
-					                break;
-					            case 4:
-					                semaforo = "Rosa";
-					                break;
-					            case 'NULL':
-					                semaforo = "N/P";
-					        } 
                             
-                            // L.marker(latlng, { icon: L.BeautifyIcon.icon(), draggable: true }).addTo(map).bindPopup("<b>ID carto: </b>"+feature.properties.cartodb_id+"<br>"+
+    					        switch(feature.properties.clas_global) {
+    					            case 0:
+    					                semaforo = "Verde";
+    					                break;
+    					            case 1:
+    					                semaforo = "Rojo";
+    					                break;
+    					            case 2:
+    					                semaforo = "Amarillo";
+    					                break;
+    					            case 3:
+    					                semaforo = "Sin captura";
+    					                break;
+    					            case 4:
+    					                semaforo = "Rosa";
+    					                break;
+    					            case 'NULL':
+    					                semaforo = "N/P";
+    					        } 
+                            
 					        layer.bindPopup("<b>ID carto: </b>"+feature.properties.cartodb_id+"<br>"+
 					            "<b>Punto: </b>"+semaforo+"<br>"+
 					            "<b>ID registro: </b>"+feature.properties.idregistro+"<br>"+

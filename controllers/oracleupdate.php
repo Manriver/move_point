@@ -27,10 +27,13 @@ if (!$conexion) {
     trigger_error(htmlentities(strtoupper($e['message'])." --> ERROR EN LA CONEXION", ENT_QUOTES), E_USER_ERROR);
 }
 
+$file = fopen("consultas.txt", "w");
+
 //------------------------------------------------------- UPDATE
 // Preparar la sentencia
 $qryudt = 'UPDATE FORMATO_DICTAMEN SET LATITUD ='.$pointjsonde[1]->lat.', LONGITUD = '.$pointjsonde[1]->lng.' WHERE IDFORMATO ='.$pointjsonde[0]->idregistro;
 echo $qryudt;
+fwrite($file, "Consulta Actualizacion: ".$qryudt. PHP_EOL);
 
 $qry_updt = oci_parse($conexion, $qryudt);
 if (!$qry_updt) {
@@ -41,7 +44,7 @@ if (!$qry_updt) {
 }
 
 // Realizar la lógica de la consulta
-/*    
+/*
     $r_updt = oci_execute($qry_updt);
     if (!$r_updt) {
         $e_updt = oci_error($qry_updt);
@@ -58,6 +61,7 @@ if (!$qry_updt) {
 // Preparar la sentencia
 $qryist = "INSERT INTO HISTORY_MOVI_POING (IDFORMATO, LATITUD, LONGITUD, ID_USUARIO, DATE_USUARIO, NOMBRE_USUARIO) VALUES (".$pointjsonde[0]->idregistro.", ".$pointjsonde[1]->lat.", ".$pointjsonde[1]->lng.", ".$id_usuario.", ".$date_user.", '".$nombre_usuario."')";
 echo $qryist;
+fwrite($file, "Consulta Insercion: ".$qryist. PHP_EOL);
 
 $qry_ist = oci_parse($conexion, $qryist);
 if (!$qry_ist) {
@@ -77,7 +81,7 @@ if (!$qry_ist) {
     		$resultado["codigo_insert"] = 0;
     }else{
 
-    	$resultado["mensaje_insert"] = "Se registro el historial correctamente del registro ".$pointjsonde[0]->idregistro;.".";
+    	$resultado["mensaje_insert"] = "Se registro el historial correctamente del registro ".$pointjsonde[0]->idregistro.".";
         $resultado["codigo_insert"] = 1;
     }
 */
@@ -112,6 +116,11 @@ oci_free_statement($qry_ist);
 oci_free_statement($qry_updt);
 oci_close($conexion);
 
+fwrite($file, "Resultado de Consulta ".$resultado["mensaje_insert"]. PHP_EOL);
+fwrite($file, "Resultado de Consulta ".$resultado["codigo_insert"]. PHP_EOL);
+fwrite($file, "Resultado de Consulta ".$resultado["mensaje_update"]. PHP_EOL);
+fwrite($file, "Resultado de Consulta ".$resultado["codigo_update"]. PHP_EOL);
+fclose($file);
 echo json_encode($resultado);
 
 exit();
