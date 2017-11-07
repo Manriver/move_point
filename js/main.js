@@ -52,7 +52,7 @@ $(function(){
 					});
 					$('.js-example-basic-single2').select2();
 
-                    $("<option />",{"value":"*","text":'Selecciona una delegacion...'}).appendTo("#selectDel");
+                    $("<option />",{"value":"*","text":'Selecciona una delegación...'}).appendTo("#selectDel");
                         for(idx in data.rows){
                             $("<option />",{"value":data.rows[idx].cartodb_id,"text":data.rows[idx].nombre}).appendTo("#selectDel");
                         }//Fin for(idx in data.rows){
@@ -78,7 +78,7 @@ $(function(){
                                 if (Object.keys(data.rows).length <= 0) {
                                     $("<option />",{"value":"*","text":'Sin colonias...'}).appendTo("#selectCol");
                                 } else {
-                                    $("<option />",{"value":"*","text":'Selecciona un colina...'}).appendTo("#selectCol");
+                                    $("<option />",{"value":"*","text":'Selecciona una colonia...'}).appendTo("#selectCol");
 
                                 }//Fin else
 
@@ -106,7 +106,7 @@ $(function(){
                             if (Object.keys(data.rows).length <= 0) {
                                 $("<option />",{"value":"*","text":'Sin calles...'}).appendTo("#selectCal");
                             } else {
-                                $("<option />",{"value":"*","text":'Selecciona un calle...'}).appendTo("#selectCal");
+                                $("<option />",{"value":"*","text":'Selecciona una calle...'}).appendTo("#selectCal");
                             }//Fin else
 
                             for(idx in data.rows){
@@ -217,7 +217,7 @@ $(function(){
         }
 
         $("button#dgiFilterSearch.btn").on("click",function(evt){
-            console.log(this);
+            // console.log(this);
             var $this = $(this);
             $this.button('loading');
             getSearch();
